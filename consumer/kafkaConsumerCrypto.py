@@ -20,7 +20,7 @@ def sendData(data):
         print(f"Connection to Elasticsearch failed: {e}")
 
 
-# Configuration du consommateur Kafka
+
 topic="cryptoData"
 consumer = KafkaConsumer(
     topic,
