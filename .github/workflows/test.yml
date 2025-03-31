@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Construire l'image de test
-        run: docker build -f Dockerfile.test -t crypto_project_test .
+        run: docker build -f -t crypto_project_test ./test
 
       - name: Exécuter les tests avec Docker
         run: docker run --rm crypto_project_test
