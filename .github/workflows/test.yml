@@ -1,0 +1,22 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v3
+
+      - name: Construire l'image de test
+        run: docker build -f Dockerfile.test -t crypto_project_test .
+
+      - name: Exécuter les tests avec Docker
+        run: docker run --rm crypto_project_test
