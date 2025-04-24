@@ -1,15 +1,13 @@
-# Utiliser une image Python
 FROM python:3.10
-
-# Définir le répertoire de travail
 WORKDIR /app
 
-# Copier les fichiers du projet
-COPY . .
+# Copier uniquement ce qui est nécessaire
+COPY tests/ tests/
+COPY requirements.txt .
 
-# Installer les dépendances
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install pytest
+RUN pip install --no-cache-dir -r requirements.txt pytest
 
-# Exécuter les tests
-CMD ["pytest", "tests/"]
+# Vérification que les tests sont bien présents
+RUN ls -l tests/
+
+CMD ["pytest", "tests/", "-v"]  # -v pour le mode verbeux
