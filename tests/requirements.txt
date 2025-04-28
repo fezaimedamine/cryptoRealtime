@@ -1,7 +1,7 @@
+fastapi
 pymongo
 pandas
 elasticsearch
 kafka-python
 scikit-learn
 joblib
-fastapi
