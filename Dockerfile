@@ -17,4 +17,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 9092 9200 27017
 
 # Lancer le service principal (peut être modifié selon ton besoin)
-CMD ["python", "kafka_predict_price.py"]
+CMD ["python", "main.py"]
