@@ -5,6 +5,17 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:  # ✅ Ajoutez cette ligne pour l'exécution manuelle
+    inputs:
+      log_level:
+        description: 'Log level'
+        required: true
+        default: 'info'
+        type: choice
+        options:
+        - info
+        - debug
+        - warning
 
 jobs:
   test:
